@@ -1,0 +1,20 @@
+{
+	"name": "andrelohmann-silverstripe/aws_video",
+	"type": "silverstripe-module",
+	"description": "AWS Elastic Transcoder Video Extension",
+	"license": "BSD-3-Clause",
+	"keywords": ["silverstripe", "framework"],
+	"authors": [
+		{
+                        "name": "Andre Lohmann",
+                        "homepage": "https://github.com/andrelohmann"
+                }
+	],
+	"require": {
+		"php": ">=5.3.2",
+		"composer/installers": "*",
+		"andrelohmann-silverstripe/mediafiles": "1.*",
+		"aws/aws-sdk-php": "2.*"
+	},
+	"minimum-stability": "stable"
+}
