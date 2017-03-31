@@ -6,9 +6,9 @@
 	"keywords": ["silverstripe", "framework"],
 	"authors": [
 		{
-                        "name": "Andre Lohmann",
-                        "homepage": "https://github.com/andrelohmann"
-                }
+			"name": "Andre Lohmann",
+			"homepage": "https://github.com/andrelohmann"
+		}
 	],
 	"require": {
 		"php": ">=5.3.2",
