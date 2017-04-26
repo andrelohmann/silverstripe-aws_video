@@ -9,9 +9,9 @@ use Aws\ElasticTranscoder\ElasticTranscoderClient;
 
 class AwsVideoFile extends VideoFile {
 
-    private static aws_credentials = null;
-    private static aws_s3client = null;
-    private static aws_etclient = null;
+    private static $aws_credentials = null;
+    private static $aws_s3client = null;
+    private static $aws_etclient = null;
 
     private static $key = null;
     private static $secret = null;
