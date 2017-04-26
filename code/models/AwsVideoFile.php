@@ -159,7 +159,7 @@ class AwsVideoFile extends VideoFile {
             $s3Client = self::s3client();
 
             // upload the file to the input bucket
-            $upload = $s3Client->upload(Config::inst()->get('AwsVideoFile', 'input_bucket'), $this->ID.'/'.basename($this->getFullPath()), file_get_contents($this->getFullPath());
+            $upload = $s3Client->upload(Config::inst()->get('AwsVideoFile', 'input_bucket'), $this->ID.'/'.basename($this->getFullPath()), file_get_contents($this->getFullPath()));
 
             $this->appendLog($LogFile, "Aws Video Upload Data returned", print_r($upload, true));
 
