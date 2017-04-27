@@ -29,7 +29,7 @@ class FinishProcessingAwsVideoFiles extends BuildTask {
 	public function run($request) {
 		$processingFiles = 0;
 		$processedFiles = 0;
-		$AwsVideos = AwsVideoFile::get()->filter(array('AwsProcessingStatus' => array('processing', 'updating')))->sort('ID');
+		$AwsVideos = AwsVideoFile::get()->filter(array('AwsProcessingStatus' => array('unprocessed', 'processing', 'updating')))->sort('ID');
 
 		foreach($AwsVideos as $vid){
 			
