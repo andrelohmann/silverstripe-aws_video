@@ -163,12 +163,12 @@ class AwsVideoFile extends VideoFile {
 
             $this->appendLog($LogFile, "Aws Video Upload Data returned", print_r($upload, true));
 
-            if(isset($upload['Location'])){
+            if(isset($upload['Key'])){
 
                 // Upload was successfull
                 $this->appendLog($LogFile, "File uploaded to input bucket");
 
-                $this->AwsInputURI = $upload['Location'];
+                $this->AwsInputURI = $upload['Key'];
                 $this->write();
 
                 // initiate transcoding jobs
@@ -240,6 +240,8 @@ class AwsVideoFile extends VideoFile {
     }
 
     protected function finish(){
+
+	$s3Client = self::s3client();
 
         switch($this->jobStatus()){
             case 'Submitted':
@@ -345,6 +347,8 @@ class AwsVideoFile extends VideoFile {
 
     protected function onBeforeDelete() {
         parent::onBeforeDelete();
+
+	$s3Client = self::s3client();
 
         // Delete origin from input bucket
         $s3Client->deleteObject(['Bucket' => Config::inst()->get('AwsVideoFile', 'input_bucket'), 'Key' => $this->AwsInputURI]);
