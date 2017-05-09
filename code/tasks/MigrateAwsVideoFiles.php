@@ -37,6 +37,9 @@ class MigrateAwsVideoFiles extends BuildTask {
 				sleep(5);
 		}
 
+		if($count > 0) $refresh = "<meta http-equiv=\"refresh\" content=\"1; URL=/dev/tasks/MigrateAwsVideoFiles\">";
+		else $refresh = "";
+
 		echo <<<EOL
 <!DOCTYPE html>
 <html lang="en">
@@ -44,14 +47,14 @@ class MigrateAwsVideoFiles extends BuildTask {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="refresh" content="1; URL=/dev/tasks/MigrateAwsVideoFiles">
+		{$refresh}
     <title>MigrateAwsVideoFiles</title>
 
   </head>
   <body>
     <h1>MigrateAwsVideoFiles</h1>
 		<a href="/dev/tasks">Back</a>
-		<p>File processed. ${count} Files left.</p>
+		<p>File processed. {$count} Files left.</p>
   </body>
 </html>
 EOL;
