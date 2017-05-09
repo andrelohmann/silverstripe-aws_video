@@ -34,10 +34,10 @@ class MigrateAwsVideoFiles extends BuildTask {
 		$count = ($AwsVideos->count() - 1);
 
 		if($AwsVideos->first()->IsProcessed()){
-				sleep(5);
+				sleep(1);
 		}
 
-		if($count > 0) $refresh = "<meta http-equiv=\"refresh\" content=\"1; URL=/dev/tasks/MigrateAwsVideoFiles\">";
+		if($count > 0) $refresh = "<meta http-equiv=\"refresh\" content=\"0; URL=/dev/tasks/MigrateAwsVideoFiles\">";
 		else $refresh = "";
 
 		echo <<<EOL
@@ -58,5 +58,6 @@ class MigrateAwsVideoFiles extends BuildTask {
   </body>
 </html>
 EOL;
+	}
 
 }
